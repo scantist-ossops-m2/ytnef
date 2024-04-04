@@ -456,6 +456,10 @@ void TNEFFillMapi(TNEFStruct *TNEF, BYTE *data, DWORD size, MAPIProps *p) {
         printf("ERROR: count==0 when filling MAPI property\n");
         return -1;
       }
+      if (mp->count == 0) {
+        printf("ERROR: count==0 when filling MAPI property\n");
+        return -1;
+      }
       mp->data = calloc(mp->count, sizeof(variableLength));
       vl = mp->data;
     } else {
